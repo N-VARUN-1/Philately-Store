@@ -18,7 +18,7 @@ const app = express()
 
 
 const allowedOrigins = [
-  process.env.FRONTEND_URL, // Use an environment variable for the production frontend URL
+  process.env.VITE_FRONTEND_URL, // Use an environment variable for the production frontend URL
   'http://localhost:5173' // Development frontend URL
 ];
 
