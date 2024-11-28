@@ -3,18 +3,18 @@ import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server:{
+  server: {
     proxy: {
       '/api': {
         target: 'https://philately-store-bk-new-iota.vercel.app',
-        secure: true
+        secure: true, // This is correct for HTTPS
+        changeOrigin: true, // Add this to ensure the host header is changed to match the target
       },
     },
   },
   plugins: [react()],
-  base: '/',
   build: {
-    outDir: 'dist',
+    outDir: 'dist', // Output directory for the build
   },
-  publicDir: 'public', // added from chatgpt
+  publicDir: 'public', // Directory for public assets
 })
