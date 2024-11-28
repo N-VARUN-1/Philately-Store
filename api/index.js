@@ -1,6 +1,6 @@
 import express from 'express'
 // import path from 'path'
-// // import cors from 'cors';
+import cors from 'cors';
 
 // import { fileURLToPath } from 'url';
 
@@ -14,15 +14,15 @@ import express from 'express'
 const app = express()
 
 
-// const allowedOrigins = [
-//   process.env.VITE_FRONTEND_URL, // Use an environment variable for the production frontend URL
-//   'http://localhost:5173' // Development frontend URL
-// ];
+const allowedOrigins = [
+  process.env.VITE_FRONTEND_URL, // Use an environment variable for the production frontend URL
+  'http://localhost:5173' // Development frontend URL
+];
 
-// app.use(cors({
-//   origin: allowedOrigins,
-//   credentials: true // Allow cookies to be sent with requests
-// }));
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true // Allow cookies to be sent with requests
+}));
 
 
 
