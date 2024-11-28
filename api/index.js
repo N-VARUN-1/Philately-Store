@@ -1,31 +1,28 @@
 import express from 'express'
-import functions from 'firebase-functions';
-import path from 'path'
-import cors from 'cors';
+// import path from 'path'
+// // import cors from 'cors';
 
-import { fileURLToPath } from 'url';
+// import { fileURLToPath } from 'url';
 
 
-const __filename = fileURLToPath(import.meta.url);
+// const __filename = fileURLToPath(import.meta.url);
 
-// Get __dirname
-const __dirname = path.dirname(__filename);
+// // Get __dirname
+// const __dirname = path.dirname(__filename);
 
 
 const app = express()
 
 
+// const allowedOrigins = [
+//   process.env.VITE_FRONTEND_URL, // Use an environment variable for the production frontend URL
+//   'http://localhost:5173' // Development frontend URL
+// ];
 
-
-const allowedOrigins = [
-  process.env.VITE_FRONTEND_URL, // Use an environment variable for the production frontend URL
-  'http://localhost:5173' // Development frontend URL
-];
-
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true // Allow cookies to be sent with requests
-}));
+// app.use(cors({
+//   origin: allowedOrigins,
+//   credentials: true // Allow cookies to be sent with requests
+// }));
 
 
 
@@ -51,14 +48,6 @@ app.listen(process.env.VITE_API_PORT, () => {
 
 
 
-app.use(express.static(path.join(__dirname, 'Philately/dist')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Philately/dist', 'index.html'));
-});
-
-
-
 import mongoose from 'mongoose';
 mongoose.connect(process.env.VITE_MONGO_URI).then(()=>{
   console.log("Mongo is Connected");
@@ -78,5 +67,3 @@ app.use('/api/cart', cartRoutes);
 app.use('/api/addr', delAddrRoutes);
 app.use('/api/pay', payRoutes);
 
-
-export const api = functions.https.onRequest(app);
