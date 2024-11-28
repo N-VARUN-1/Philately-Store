@@ -11,7 +11,7 @@ import cors from 'cors';
 // const __dirname = path.dirname(__filename);
 
 
-const app = express()
+const app = express();
 
 
 const allowedOrigins = [
