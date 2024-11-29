@@ -25,13 +25,6 @@ const __dirname = path.dirname(__filename);
 app.use(cors({
   origin: process.env.VITE_FRONTEND_URL,
   method: ['POST', 'GET'],
-  allowedHeaders: [
-    'Content-Type', 
-    'Authorization', 
-    'Access-Control-Allow-Origin',
-    'Access-Control-Allow-Methods',
-    'Access-Control-Allow-Headers'
-  ],
   credentials: true // Allow cookies to be sent with requests
 }));
 
