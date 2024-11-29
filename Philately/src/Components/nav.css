@@ -1,0 +1,54 @@
+/* responsive.css or tailwind.css */
+@media (max-width: 1024px) {
+  .navbar-container {
+    @apply flex-col items-start;
+  }
+
+  .search-container {
+    @apply w-full mb-4;
+  }
+
+  .nav-links {
+    @apply flex-col space-x-0 space-y-3;
+  }
+
+  .dropdown-explore {
+    @apply relative w-full;
+  }
+
+  .mobile-menu {
+    @apply fixed inset-0 z-50 bg-white overflow-y-auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    @apply flex-col items-center;
+  }
+
+  .notification-icon {
+    @apply hidden;
+  }
+
+  .responsive-hidden {
+    @apply hidden;
+  }
+
+  .mobile-flex {
+    @apply flex flex-col space-y-4;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    @apply px-2 py-2;
+  }
+
+  .search-input {
+    @apply w-full;
+  }
+
+  .dropdown-menu {
+    @apply w-full;
+  }
+}
