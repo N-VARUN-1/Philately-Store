@@ -45,7 +45,7 @@ const PhilatelicAccountForm = () => {
     try {
       setLoading(true);
       // Send formData to the backend API
-      const response = await fetch('https://philately-store-backend.vercel.app/api/auth/signup', {
+      const response = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
