@@ -43,7 +43,8 @@ const SignIn = () => {
         body: JSON.stringify(formData)
       });
 
-      const data = await response.json();
+      // const data = await response.json();
+      const data = response.ok ? await response.json() : null;
 
       if (!response.ok) {
         // Handle error response from server
