@@ -1,11 +1,21 @@
 import express from 'express'
+import mongoose from 'mongoose';
 import cors from 'cors';
 import bodyParser from 'body-parser'
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+dotenv.config();
+
+import authRoutes from './routes/auth.route.js';
+import cookieParser from 'cookie-parser';
+import cartRoutes from './routes/cart.route.js';
+import delAddrRoutes from './routes/delivery.route.js';
+import payRoutes from './routes/payment.route.js';
 
 const app = express();
 
-import path from 'path';
-import { fileURLToPath } from 'url';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,14 +32,9 @@ app.use(cors({
   credentials: true // Allow cookies to be sent with requests
 }));
 
-import authRoutes from './routes/auth.route.js';
-import cookieParser from 'cookie-parser';
-import cartRoutes from './routes/cart.route.js';
-import delAddrRoutes from './routes/delivery.route.js';
-import payRoutes from './routes/payment.route.js';
 
-import dotenv from 'dotenv';
-dotenv.config();
+
+
 
 
 app.get('/', (req, res) => {
@@ -42,7 +47,7 @@ app.listen(process.env.VITE_API_PORT, () => {
 
 
 
-import mongoose from 'mongoose';
+
 mongoose.connect(process.env.VITE_MONGO_URI).then(()=>{
   console.log("Mongo is Connected");
 })
