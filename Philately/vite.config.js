@@ -13,7 +13,7 @@ export default defineConfig({
     },
   },
   plugins: [react()],
-  base: '/',
+  base: '/api/',
   build: {
     outDir: 'dist',
   }, // added from chatgpt
