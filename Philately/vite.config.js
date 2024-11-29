@@ -7,6 +7,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         target: 'https://philately-store-bk-new-iota.vercel.app',
+        changeOrigin: true,
         secure: true
       },
     },
