@@ -21,13 +21,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
-const allowedOrigins = [
-  process.env.VITE_FRONTEND_URL, // Use an environment variable for the production frontend URL
-  'http://localhost:5173' // Development frontend URL
-];
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: process.env.VITE_FRONTEND_URL,
   method: ['POST', 'GET'],
   credentials: true // Allow cookies to be sent with requests
 }));
@@ -67,9 +63,9 @@ app.use('/api/addr', delAddrRoutes);
 app.use('/api/pay', payRoutes);
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'Philately/dist')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 // Catch-all handler for any request not matched
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Philately/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
