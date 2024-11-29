@@ -1,7 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose';
 import cors from 'cors';
-import bodyParser from 'body-parser'
+// import bodyParser from 'body-parser'
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -57,7 +57,7 @@ mongoose.connect(process.env.VITE_MONGO_URI).then(()=>{
 
 app.use(express.json());      // Make sure your server is properly parsing JSON bodies. If you're using Express, ensure you have the JSON middleware:
 app.use(cookieParser());
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 
 // app.use('/api/user', userRoutes);
