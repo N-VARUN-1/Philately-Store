@@ -68,7 +68,7 @@ const SignIn = () => {
       }
 
     } catch (error) {
-      console.error("Sign in error:", error);
+      console.log("Sign in error:", error);
       setErrorMessage("An unexpected error occurred");
       setIsLoading(false);
     }
