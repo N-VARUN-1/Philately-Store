@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   server:{
     proxy: {
-      '/api': {
+      '/api/(.*)': {
         target: 'https://philately-store-backend.vercel.app',
         changeOrigin: true,
         secure: true
