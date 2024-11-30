@@ -18,7 +18,6 @@ export default function App() {
         <Outlet/>
       </main>
       <Footer/>
-      {/* <SignIn/> */}
     </>
   )
 }
