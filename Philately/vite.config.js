@@ -6,7 +6,7 @@ export default defineConfig({
   server:{
     proxy: {
       '/api/(.*)': {
-        target: 'https://philately-store-backend.vercel.app',
+        target: 'https://philately-store-backend-ne-1.vercel.app',
         changeOrigin: true,
         secure: true,
       },
