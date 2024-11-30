@@ -39,6 +39,7 @@ const SignIn = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'https://philately-store-frontend.vercel.app'
         },
         body: JSON.stringify(formData)
       });
