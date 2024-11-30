@@ -14,7 +14,7 @@ export default defineConfig({
     },
   },
   plugins: [react()],
-  base: '/Philately',
+  base: '/Philately/',
   build: {
     outDir: 'dist',
   }, // added from chatgpt
