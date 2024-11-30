@@ -9,7 +9,6 @@ export default defineConfig({
         target: 'https://philately-store-backend.vercel.app',
         changeOrigin: true,
         secure: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
       },
     },
   },
