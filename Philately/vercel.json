@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://philately-store-ne-1.vercel.app/api/$1"
+      "destination": "https://philately-store-backend-ne-1.vercel.app/api/$1"
     },
     {
       "source": "/(.*)",
