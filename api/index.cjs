@@ -75,9 +75,9 @@ app.use('/api/addr', delAddrRoutes);
 app.use('/api/pay', payRoutes);
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'Philately/dist')));
+app.use(express.static(path.join(__dirname, '../Philately/dist')));
 
 // Catch-all handler for any request not matched
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'Philately/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '../Philately/dist', 'index.html'));
 });
