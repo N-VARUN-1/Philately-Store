@@ -1,12 +1,10 @@
 {
   "version": 2,
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "https://philately-store-backend.vercel.app/api/$1"
-    }
-  ],
   "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://philately-store-backend.vercel.app/api/$1"
+    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
