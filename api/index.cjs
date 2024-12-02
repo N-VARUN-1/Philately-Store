@@ -24,7 +24,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(cors({
   origin: 'https://philately-store-frontend.vercel.app',
-  method: ['POST', 'GET','HEAD','PUT','PATCH','DELETE'],
+  methods: ['POST', 'GET','HEAD','PUT','PATCH','DELETE'],
   credentials: true,
   allowedHeaders: [
       "Origin",
