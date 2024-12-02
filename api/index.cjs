@@ -22,21 +22,19 @@ const __dirname = path.dirname(__filename);
 
 
 
-app.use(cors({
-  origin: 'https://philately-store-frontend.vercel.app',
-  methods: ['POST', 'GET','HEAD','PUT','PATCH','DELETE'],
-  credentials: true,
-  allowedHeaders: [
-      "Origin",
-      "Content-Type",
-      "Accept",
-      "Authorization",
-      "X-Requested-With",
-  ],
-}));
+const corsOptions = {
+  origin: 'https://philately-store-frontend.vercel.app', // Frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Allowed methods
+  credentials: true, // Allow credentials (cookies, auth headers)
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+};
 
+// Apply CORS middleware
+app.use(cors(corsOptions));
 
-app.options('*', cors());
+// Handle preflight requests
+app.options('*', cors(corsOptions));
+
 
 
 
