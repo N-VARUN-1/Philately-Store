@@ -2,10 +2,6 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://philately-store-backend-ne-1.vercel.app"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
