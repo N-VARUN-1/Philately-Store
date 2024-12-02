@@ -1,76 +1,61 @@
-import express from 'express'
+import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-// import bodyParser from 'body-parser'
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
-dotenv.config();
-
-import authRoutes from './routes/auth.route.js';
 import cookieParser from 'cookie-parser';
+
+// Import routes
+import authRoutes from './routes/auth.route.js';
 import cartRoutes from './routes/cart.route.js';
 import delAddrRoutes from './routes/delivery.route.js';
 import payRoutes from './routes/payment.route.js';
 
+dotenv.config();
+
 const app = express();
-
-
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
-
+// CORS setup
 const corsOptions = {
-  origin: 'https://philately-store-frontend.vercel.app', // Frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Allowed methods
-  credentials: true, // Allow credentials (cookies, auth headers)
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  origin: 'https://philately-store-frontend.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
-// Apply CORS middleware
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Handle preflight requests
 
-// Handle preflight requests
-app.options('*', cors(corsOptions));
-
-
-
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.listen(process.env.VITE_API_PORT, () => {
-  console.log(`Server running on port ${process.env.VITE_API_PORT}`)
-})
-
-
-
-
-mongoose.connect(process.env.VITE_MONGO_URI).then(()=>{
-  console.log("Mongo is Connected");
-})
-.catch((err)=>{
-  console.log(err);
-})
-
-app.use(express.json());      // Make sure your server is properly parsing JSON bodies. If you're using Express, ensure you have the JSON middleware:
+// Middleware
+app.use(express.json());
 app.use(cookieParser());
-// app.use(bodyParser.json());
 
+// MongoDB connection
+mongoose.connect(process.env.VITE_MONGO_URI)
+  .then(() => console.log('Mongo is Connected'))
+  .catch((err) => console.error(err));
 
-// app.use('/api/user', userRoutes);
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/addr', delAddrRoutes);
 app.use('/api/pay', payRoutes);
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'dist')));
-
-// Catch-all handler for any request not matched
+// Serve static files
+app.use(express.static(path.join(__dirname, '../Philately/dist')));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '../Philately/dist', 'index.html'));
+});
+
+// Test route
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+// Start server
+app.listen(process.env.VITE_API_PORT, () => {
+  console.log(`Server running on port ${process.env.VITE_API_PORT}`);
 });
