@@ -91,7 +91,7 @@ export const signup = async (req, res) => {
 /////////// User - SIGN IN ///////////
 export const signin = async (req, res) => {
     const { email, userId, password } = req.body;
-
+    res.header('Access-Control-Allow-Origin', 'https://philately-store-frontend.vercel.app');
     if (!email || !password || !userId) {
         return res.status(400).json({ message: 'Please fill in all fields' });
     }
