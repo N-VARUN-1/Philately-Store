@@ -39,7 +39,7 @@ mongoose.connect(process.env.VITE_MONGO_URI)
   .catch((err) => console.error(err));
 
 // Routes
-app.use('https://philately-store-backend-ne-1.vercel.app/api/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/addr', delAddrRoutes);
 app.use('/api/pay', payRoutes);
