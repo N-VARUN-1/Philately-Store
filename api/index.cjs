@@ -45,9 +45,9 @@ app.use('/api/addr', delAddrRoutes);
 app.use('/api/pay', payRoutes);
 
 // Serve static files
-app.use(express.static(path.join(__dirname, '../Philately/dist')));
+app.use(express.static(path.join(__dirname, 'dist')));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../Philately/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Test route
