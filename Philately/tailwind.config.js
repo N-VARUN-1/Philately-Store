@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-const flowbite = require("flowbite-react/tailwind");
-const withMT = require("@material-tailwind/react/utils/withMT");
+// const flowbite = require("flowbite-react/tailwind");
+import flowbite from 'flowbite-react/tailwind';
+// const withMT = require("@material-tailwind/react/utils/withMT");
+import withMT from '@material-tailwind/react/utils/withMT';
 
 module.exports = withMT({
   content: [
