@@ -20,14 +20,16 @@ const __dirname = path.dirname(__filename);
 
 // CORS setup
 const corsOptions = {
-  origin: 'https://philately-store-frontend.vercel.app',
+  origin: [
+    'https://philately-store-frontend.vercel.app',
+    'http://localhost:5173'  // Add your local development URL
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // Handle preflight requests
+app.use(cors(corsOptions)); // Handle preflight requests
 
 // Middleware
 app.use(express.json());
