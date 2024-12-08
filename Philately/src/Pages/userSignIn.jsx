@@ -37,6 +37,7 @@ const SignIn = () => {
 
       const response = await fetch('https://philately-store-backend-ne-1.vercel.app/api/auth/signin', {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },
