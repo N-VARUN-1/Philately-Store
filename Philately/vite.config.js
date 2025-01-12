@@ -8,7 +8,7 @@ export default defineConfig({
   // Render.com specific configurations
   base: '/',
   
-  dist: {
+  build: {
     outDir: 'dist'
   },
   
