@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: philately-frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    buildPath: dist
