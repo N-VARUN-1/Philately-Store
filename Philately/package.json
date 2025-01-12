@@ -2,6 +2,12 @@
   "name": "philately",
   "version": "0.0.0",
   "type": "module",
+  "scripts": {
+    "dev": "npm install",
+    "build": "npm run build",
+    "preview": "npm run preview",
+    "start": "npm run preview"
+  },
   "dependencies": {
     "vite": "^5.4.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
