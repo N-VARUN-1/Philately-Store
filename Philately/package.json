@@ -10,6 +10,8 @@
     "start": "npx vite preview"
   },
   "dependencies": {
+    "vite": "^5.4.1",
+    "@vitejs/plugin-react-swc": "^3.5.0"
     "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.10",
     "@reduxjs/toolkit": "^2.3.0",
