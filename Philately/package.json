@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm install",
-    "build": "npm run build --prefix Philately",
+    "build": "npm run build",
     "preview": "npm run preview",
     "start": "npm run preview"
   },
