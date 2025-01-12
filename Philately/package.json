@@ -3,14 +3,12 @@
   "private": "true",
   "version": "0.0.0",
   "type": "module",
-  {
   "scripts": {
     "dev": "npx vite",
     "build": "npx vite build",
     "preview": "npx vite preview",
     "start": "npx vite preview"
   },
-}
   "dependencies": {
     "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.10",
