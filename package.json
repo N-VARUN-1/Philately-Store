@@ -1,7 +1,7 @@
 {
   "type": "module",
   "main": "index.js",
-  "build": "npm install && npm install --prefix Philately && npm build --prefix Philately",
+  "build": "npm install && npm install --prefix Philately && npm run build --prefix Philately",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
