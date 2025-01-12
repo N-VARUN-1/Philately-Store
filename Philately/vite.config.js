@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: mode === 'development' ? {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://philately-store-1.onrender.com',
         changeOrigin: true,
       },
     } : {},
