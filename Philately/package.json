@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npx install",
-    "build": "npx run build",
-    "preview": "npx run preview",
-    "start": "npx run preview"
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "start": "vite preview",
   },
   "dependencies": {
     "vite": "^5.4.1",
