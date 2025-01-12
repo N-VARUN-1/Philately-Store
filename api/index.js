@@ -15,7 +15,7 @@ import payRoutes from './routes/payment.route.js';
 
 const app = express();
 
-
+const port = process.env.VITE_API_PORT || 3000
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 
 app.listen(process.env.VITE_API_PORT, () => {
   try {
-    console.log(`Server running on port ${process.env.VITE_API_PORT}`)
+    console.log(`Server running on port ${port}`)
   } catch (error) {
     console.log(error);
   }
