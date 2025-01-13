@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(process.env.VITE_API_PORT, () => {
+app.listen(process.env.VITE_API_PORT, '0.0.0.0', () => {
   try {
     console.log(`Server running on port ${port}`)
   } catch (error) {
