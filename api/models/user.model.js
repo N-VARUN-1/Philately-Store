@@ -1,27 +1,26 @@
 import mongoose from 'mongoose';
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
-const userIdValidator = function(value) {
-    return mongoose.Types.ObjectId.isValid(value) || typeof value === 'string';
+const userIdValidator = function (value) {
+  return mongoose.Types.ObjectId.isValid(value) || typeof value === 'string';
 };
 
 const UserSchema = new mongoose.Schema({
-    userId: {
-        type: mongoose.Schema.Types.Mixed,
-        required: true,
-        validate: [userIdValidator, 'userId must be an ObjectId or a String'],
-        unique: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    password: {
-        type: String,
-        required: true,
-        unique: true
-    },
+  userId: {
+    type: mongoose.Schema.Types.Mixed,
+    required: true,
+    validate: [userIdValidator, 'userId must be an ObjectId or a String'],
+    unique: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
   applicantName: {
     type: String,
     required: true,
@@ -63,7 +62,7 @@ const UserSchema = new mongoose.Schema({
   profilePicture: {
     type: String
   }
-}, {timestamps:true});
+}, { timestamps: true });
 
 // Export the model
 const User = mongoose.model("User ", UserSchema);
