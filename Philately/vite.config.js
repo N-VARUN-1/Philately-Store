@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   server: {
     host: '0.0.0.0', // Bind to all network interfaces
-    port: 10000, // Use PORT or fallback to 3000
+    // port: 10000, // Use PORT or fallback to 3000
     proxy: {
       '/api': {
         target: 'https://philately-store-1.onrender.com',
