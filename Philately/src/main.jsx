@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import React, { StrictMode } from 'react'
 import App from './App.jsx'
 import './index.css'
 
@@ -37,27 +37,27 @@ import Contact from './Pages/Contact.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     children: [
       {
         path: "/signin",
-        element: <SignIn/>,
+        element: <SignIn />,
       },
       {
         path: "/admin-signin",
-        element: <AdminSignIn/>
+        element: <AdminSignIn />
       },
       {
         path: "/admin-signup",
-        element: <AdminSignUp/>
+        element: <AdminSignUp />
       },
       {
         path: "/user-signin",
-        element: <UserSignIn/>
+        element: <UserSignIn />
       },
       {
         path: "/user-signup",
-        element: <UserSignUp/>
+        element: <UserSignUp />
       },
       {
         path: "/explore",
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
           },
           {
             path: "allProductPage",
-            element: <AllProductPage/>
+            element: <AllProductPage />
           },
           {
             path: "thematic_pack",
@@ -93,29 +93,29 @@ const router = createBrowserRouter([
         children: [
           {
             path: "yourcart",
-            element: <CartPage/>
+            element: <CartPage />
           },
           {
             path: "deliveryaddress",
-            element: <DeliveryAddressForm/>
+            element: <DeliveryAddressForm />
           },
           {
             path: "paymentsgateway",
-            element: <PaymentsPage/>
+            element: <PaymentsPage />
           },
           {
             path: "order_history",
-            element: <OrderHist/>
+            element: <OrderHist />
           }
         ]
       },
       {
         path: '/aboutPhilatelyStore',
-        element: <About/>
+        element: <About />
       },
       {
         path: '/contactPhilatelyStore',
-        element: <Contact/>
+        element: <Contact />
       }
     ],
   },
