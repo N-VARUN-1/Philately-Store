@@ -15,7 +15,7 @@ import payRoutes from './routes/payment.route.js';
 
 const app = express();
 
-const port = process.env.VITE_API_PORT || 3000
+const port = process.env.VITE_API_PORT || 10000
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
