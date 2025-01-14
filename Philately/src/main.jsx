@@ -1,5 +1,5 @@
 import React, { StrictMode } from 'react'
-import App from './App.jsx'
+import App from './App'
 import './index.css'
 
 import { ThemeProvider } from "@material-tailwind/react";
