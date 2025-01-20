@@ -1,4 +1,5 @@
 import React, { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client';
 import App from './App'
 import './index.css'
 
@@ -121,7 +122,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider>
       <PersistGate loading={null} persistor={persistor}>
