@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
+import dotenv from 'dotenv'
+dotenv.config();
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,7 +10,7 @@ export default defineConfig({
     // port: 10000, // Use PORT or fallback to 3000
     proxy: {
       '/api': {
-        target: 'https://philately-store-1.onrender.com',
+        target: process.env.API,
         changeOrigin: true,
         secure: true,
       },
